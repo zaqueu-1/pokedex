@@ -5,7 +5,7 @@
 Pokédex app, updated 'til 9th gen and with search system! Currently working on adding more features.
 
 ## Demo
-![demo](https://media.discordapp.net/attachments/1032819189288816690/1064982896747757689/chrome-capture-2023-0-17.gif)
+![demo](https://github.com/zaqueu-1/pokedex/blob/main/chrome-capture-2023-0-17.gif)
 
 ## Deploy
 
