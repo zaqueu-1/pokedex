@@ -8,7 +8,7 @@ Pokédex app, updated 'til 9th gen and with search system! Currently working on 
 ![demo](https://github.com/zaqueu-1/pokedex/blob/main/chrome-capture-2023-0-17.gif)
 
 ## Deploy
-
+https://pokedex-zaqueu-1.vercel.app/
 
 ## Roadmap
 - Search system [finished];
