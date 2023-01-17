@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+code {
+  font-family: 'Satisfy', cursive;
+}
+
+.App {
+  text-align: center;
+}
+
+.CardMedia {
+  transition: all 0.4s;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.CardMedia:hover {
+  transform: scale(1.07);
+  opacity: 1;
+}
+
+.CardContent {
+  background-color: rgba(124, 124, 124, 0.25);
+  margin-bottom: -20px;
+}
+
+.CardActions {
+  background-color: rgb(255, 255, 255, 0.9);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.pokeName {
+  text-shadow: 2px 2px rgba(40, 40, 40, 0.3);
+}
+
+.pokeGrid {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.pokeCard {
+  min-width: 180px;
+}
+
+.animate-pop {
+  animation-duration: 0.6s;
+  animation-name: animate-pop;
+}
+
+@keyframes animate-pop {
+  0% {
+      opacity: 0;
+      transform: scale(0.6, 0.6);
+  }
+
+  100% {
+      opacity: 1;
+      transform: scale(1,1);
+  }
+}
+
+.typesContainer {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  font-family: 'Satisfy', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, #777,#318172);
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.rock {
+  background-color: rgb(182, 161, 54);
+}
+
+.ghost {
+  background-color: rgb(115, 87, 151);
+}
+
+.electric {
+  background-color: rgb(247, 208, 44);
+}
+
+.bug {
+  background-color: rgb(166, 185, 26);
+}
+
+.poison {
+  background-color: rgb(163, 61, 162);
+}
+
+.normal {
+  background-color: rgb(168, 167, 122);
+}
+
+.fairy {
+  background-color: rgb(214, 133, 173);
+}
+
+.fire {
+  background-color: rgb(238, 129, 48);
+}
+
+.grass {
+  background-color: rgb(122, 199, 76);
+}
+
+.ice {
+  background-color: rgb(150, 217, 214);
+}
+
+.water {
+  background-color: rgb(99, 144, 240);
+}
+
+.ground{
+  background-color: rgb(226, 191, 101);
+}
+
+.flying {
+  background-color: rgb(169, 143, 243);
+}
+
+.fighting {
+  background-color: rgb(194, 46, 40);
+}
+
+.psychic {
+  background-color: rgb(249, 85, 135);
+}
+
+.dragon {
+  background-color: rgb(111, 53, 252);
+}
+
+.dark {
+  background-color: rgb(112, 87, 70);
+}
+
+.steel {
+  background-color: rgb(183, 183, 206);
+}
