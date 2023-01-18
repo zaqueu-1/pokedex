@@ -130,7 +130,8 @@ export const Home = () => {
             <Navbar 
                 searchPokemons={searchPokemons} 
                 getPokemons={getPokemons} 
-                getGen={getGen} />
+                getGen={getGen}
+                gen={gen} />
                 <Container>
                     <Grid className='pokeGrid' container spacing={2}>
                         {currentPosts.map((pokemon, key) => (

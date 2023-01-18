@@ -53,7 +53,7 @@ export default function PokemonCard({ id, name, image, types }) {
         alt={name}
         className="CardMedia">
         </CardMedia>
-        <div className='typesContainer'>
+        <div display="flex" alignItems="center" justifyContent="center" className='typesContainer'>
         <Typography padding="4px" display="inline-block" fontSize="11px" className={type1} color="white" borderRadius="4px" 
         style={{ textTransform: 'capitalize', width: "25%", textAlign: "center"  }}>
           {type1}</Typography> 
@@ -63,7 +63,7 @@ export default function PokemonCard({ id, name, image, types }) {
         </div>
         <CardContent className='CardContent'>
         <Typography gutterBottom variant="h5" className="pokeName" color="white" 
-        style={{ textTransform: 'capitalize', textAlign: 'center'}}>
+        style={{ textTransform: 'capitalize', fontSize: "1.2rem", textAlign: 'center'}}>
           {name} </Typography>
         </CardContent>
         </Card>
