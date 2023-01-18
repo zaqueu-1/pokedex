@@ -20,7 +20,8 @@ const Search = styled('div')(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: '25%',
+    margin: '1rem auto -.5rem auto',
   },
 }));
 
@@ -57,7 +58,7 @@ export default function Navbar({searchPokemons, getGen}) {
     <Box sx={{ flexGrow: 1, marginBottom:"2em", border:"4px solid transparent" }}>
       <AppBar position="static" sx={{ backgroundColor:"transparent", boxShadow: "none" }}>
         <Toolbar>
-            <Box display="flex" justifyContent="space-between" width="100%">
+            <Box display="flex" justifyContent="space-around" width="100%">
             <Box component="img" src={logo} height="3em"/>
                         <Button class="gen-btn" onClick={() => getGen(1)} >Kanto <small className='small-info'>#1-151</small></Button>
                         <Button class="gen-btn" onClick={() => getGen(2)} >Johto <small className='small-info'>#152-251</small></Button>
@@ -68,7 +69,9 @@ export default function Navbar({searchPokemons, getGen}) {
                         <Button class="gen-btn" onClick={() => getGen(7)} >Alola <small className='small-info'>#722-809</small></Button>
                         <Button class="gen-btn" onClick={() => getGen(8)} >Galar & Hisui <small className='small-info'>#810-905</small></Button>
                         <Button class="gen-btn" onClick={() => getGen(9)} >Paldea <small className='small-info'>#906-1008</small></Button>
-          <Search onChange={(e)=>searchPokemons(e.target.value.toLowerCase())}>
+          </Box>
+        </Toolbar>
+        <Search className="search-box" onChange={(e)=>searchPokemons(e.target.value.toLowerCase())}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -77,8 +80,6 @@ export default function Navbar({searchPokemons, getGen}) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          </Box>
-        </Toolbar>
       </AppBar>
     </Box>
   );
