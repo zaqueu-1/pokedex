@@ -26,3 +26,29 @@
     background: rgba(255,255,255,0.2);
     color: #ffe400;
 }
+
+@media all and (max-width: 600px) {
+    .pagination {
+        margin: 1rem;
+    }
+    
+    .pagination button {
+        width: 24px;
+        height: 24px;
+        font-size: 0.55rem;
+        margin: 0 .2rem .7rem .2rem;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .pagination {
+        margin: 1rem;
+    }
+    
+    .pagination button {
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
+        margin: 0 .2rem .7rem .2rem;
+    }
+}

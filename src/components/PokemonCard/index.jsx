@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import './pokemonCard.css'
 
 export default function PokemonCard({ id, name, image, types }) {
 
@@ -40,31 +41,26 @@ export default function PokemonCard({ id, name, image, types }) {
 
   return (
     
-    <Card style={{ maxWidth: 350, borderRadius: "12px", backgroundColor: color }}>
-        <container style={{ fontSize: "16px", textShadow: "1px 1px rgb(40, 40, 40, 0.3)", color: "whitesmoke",
-      display:"flex", alignItems:"left", justifyContent:"left", background:"rgba(124,124,124,0.25)", padding:"2px 10px" }}>
-          #{id} </container>
-        <CardMedia
-        loading="lazy"
-        component="img"
-        height="180"
-        min-height="100"
+    <Card className="card" style={{ backgroundColor: color}}>
+      <div className="id-container"> #{id} </div>
+      <CardMedia
+        className="card-media"
         image={image}
-        alt={name}
-        className="CardMedia">
-        </CardMedia>
-        <div display="flex" alignItems="center" justifyContent="center" className='typesContainer'>
-        <Typography padding="4px" display="inline-block" fontSize="11px" className={type1} color="white" borderRadius="4px" 
-        style={{ textTransform: 'capitalize', width: "25%", textAlign: "center"  }}>
-          {type1}</Typography> 
-        <Typography padding="4px" display="inline-block" fontSize="11px" className={type2()} color="white" borderRadius="4px" 
-        style={{ textTransform: 'capitalize', width: "25%", textAlign: "center" }}>
-         {type2()} </Typography>
+        loading='lazy'
+        alt={name} >
+      </CardMedia>
+      <div className='typesContainer'>
+        <Typography className={`${type1} type`}>
+            {type1}
+          </Typography> 
+          <Typography className={`${type2()} type`}>
+            {type2()} 
+          </Typography>
         </div>
-        <CardContent className='CardContent'>
-        <Typography gutterBottom variant="h5" className="pokeName" color="white" 
-        style={{ textTransform: 'capitalize', fontSize: "1.2rem", textAlign: 'center'}}>
-          {name} </Typography>
+        <CardContent className='cardContent'>
+          <Typography gutterBottom variant="h5" className="pokeName">
+            {name} 
+          </Typography>
         </CardContent>
         </Card>
   );

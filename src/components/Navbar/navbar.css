@@ -1,3 +1,10 @@
+.toolbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    padding: 0 1rem;
+}
 
 .gen-btn {
     background-color: transparent;
@@ -11,6 +18,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 .7rem;
+    padding: 5px;
 }
 
 .gen-btn:hover {
@@ -21,6 +30,7 @@
 .active {
     background-color: transparent;
     border: none;
+    color: #FEC20D;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
@@ -29,8 +39,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #FEC20D;
     background-color: rgba(255,255,255,0.1);
+    margin: 0 .7rem;
+    padding: 5px;
 }
 
 .small-info {
@@ -38,3 +49,71 @@
     color: rgb(218, 217, 217);
 }
 
+.search-box {
+    max-width: 70%;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto 0 auto;
+    width: 100%;
+}
+
+.nav-btn {
+	padding: 5px;
+    position: fixed;
+    top: 3%;
+    right: 3%;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.3rem;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    z-index: 4;
+}
+
+@media all and (max-width: 1129px) {
+    .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.nav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 40vw;
+        border: 2px solid rgb(255, 255, 255, 0.2);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		transition: 0.7s;
+		transform: translatex(100vh);
+        background: linear-gradient(to right, #777,#318172);
+        border-radius: 12px 0 0 12px;
+	}
+
+    .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+
+	.responsive_nav {
+		transform: none;
+	}
+
+	.gen-btn {
+		font-size: 1rem;
+	}
+}

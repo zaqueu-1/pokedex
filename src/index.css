@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 code {
   font-family: 'Satisfy', cursive;
 }
@@ -8,32 +14,8 @@ code {
   text-align: center;
 }
 
-.CardMedia {
-  transition: all 0.4s;
-  opacity: 0.7;
-  margin-bottom: 20px;
-}
-
-.CardMedia:hover {
-  transform: scale(1.07);
-  opacity: 1;
-}
-
-.CardContent {
-  background-color: rgba(124, 124, 124, 0.25);
-  margin-bottom: -20px;
-}
-
-.CardActions {
-  background-color: rgb(255, 255, 255, 0.9);
-}
-
 html {
   scroll-behavior: smooth;
-}
-
-.pokeName {
-  text-shadow: 2px 2px rgba(40, 40, 40, 0.3);
 }
 
 .pokeGrid {
@@ -62,13 +44,6 @@ html {
       opacity: 1;
       transform: scale(1,1);
   }
-}
-
-.typesContainer {
-  padding-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 body {
