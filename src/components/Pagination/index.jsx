@@ -5,7 +5,7 @@ import "./pagination.css";
 const Pagination = ({totalPosts, postsPerPage, setCurrentPage, currentPage}) => {
     
     const scrollUp = () => {
-        const windowSize = window.matchMedia("(max-width: 1129px");
+        const windowSize = window.matchMedia("(max-width: 1129px)");
         
         if (windowSize.matches) {
         window.scrollTo(0, 0);
