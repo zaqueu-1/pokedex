@@ -4,8 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import './pokemonCard.css'
+import Modal from '../Modal'
+import { useState } from "react";
 
-export default function PokemonCard({ id, name, image, types }) {
+export default function PokemonCard({ image, types, pokemon, handleImage }) {
 
   const colors = {
     rock: 'rgb(182, 161, 54, 0.5)',
@@ -39,15 +41,89 @@ export default function PokemonCard({ id, name, image, types }) {
     }
   }
 
+  const [openModal, setOpenModal] = useState(false)
+
+  const CONTAINER = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+    color: '#fff',
+    margin: '0 auto',
+  }
+
+  const PKM_NAME = {
+    textTransform: "capitalize",
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    marginBottom: '.3rem',
+    marginTop: '-3rem',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#fec20d',
+  }
+
   return (
-    
     <Card className="card" style={{ backgroundColor: color}}>
-      <div className="id-container"> #{id} </div>
+      <Modal setOpenModal={setOpenModal} isOpen={openModal} pokemon={pokemon}>
+        <div style={CONTAINER}>
+
+          <div style={PKM_NAME}>
+            <p>#{pokemon.data.id} {pokemon.data.name}</p>
+          </div>
+
+          <div>
+            <p>Altura: {pokemon.data.height/10}m | Peso: {pokemon.data.weight/10}kg</p>
+          </div>
+
+          <div className='info-div'>
+
+          <CardMedia
+              className="modal-media"
+              image={image}
+              loading='lazy'
+              alt={pokemon.data.name} />
+
+            <div>
+            <div className='modalTypesContainer'>
+                <Typography className={`${type1} modalType`}>
+                  {type1}
+                </Typography> 
+                <Typography className={`${type2()} modalType`}>
+                  {type2()} 
+                </Typography>
+              </div>
+              <div className='stats-div'>
+                <div style={{marginBottom:'1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+                  <ul>HP: <b>{pokemon.data.stats[0].base_stat}</b></ul>
+                  <ul>Attack: <b>{pokemon.data.stats[1].base_stat}</b></ul>
+                  <ul>Defense: <b>{pokemon.data.stats[2].base_stat}</b></ul>
+                  <ul>Sp.Attack: <b>{pokemon.data.stats[3].base_stat}</b></ul>
+                  <ul>Sp.Defense: <b>{pokemon.data.stats[4].base_stat}</b></ul>
+                  <ul>Speed: <b>{pokemon.data.stats[5].base_stat}</b></ul>
+                </div>
+                {pokemon.data.abilities.map((ability) => (
+                      <Typography className='ability'>
+                        {ability.ability.name}
+                      </Typography>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Modal>
+      <div className="id-container"> #{pokemon.data.id} </div>
       <CardMedia
         className="card-media"
         image={image}
         loading='lazy'
-        alt={name} >
+        alt={pokemon.data.name}
+        onClick={() => setOpenModal(true)} >
       </CardMedia>
       <div className='typesContainer'>
         <Typography className={`${type1} type`}>
@@ -58,8 +134,10 @@ export default function PokemonCard({ id, name, image, types }) {
           </Typography>
         </div>
         <CardContent className='cardContent'>
-          <Typography gutterBottom variant="h5" className="pokeName">
-            {name} 
+          <Typography gutterBottom variant="h5" 
+                      className="pokeName" >
+            {pokemon.data.name} 
+          <div className="more-info" onClick={() => setOpenModal(true)}>+ Informações</div>
           </Typography>
         </CardContent>
         </Card>

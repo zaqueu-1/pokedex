@@ -10,12 +10,14 @@ import Pagination from "../components/Pagination";
 
 export const Home = () => {
   
-    const [pokemons, setPokemons] = useState([]);
-    const [allPokes, setAllPokes] = useState([]);
-    const [gen, setGen] = useState(1);
-    const [currentPage, setCurrentPage] = useState(1);
-    useEffect(() => {getGen(1)}, []);
-    useEffect(() => {getAllPokes()}, []);
+    const [pokemons, setPokemons] = useState([])
+    const [allPokes, setAllPokes] = useState([])
+    const [gen, setGen] = useState(1)
+    const [isLoading, setIsLoading] = useState(true)
+    const [currentPage, setCurrentPage] = useState(1)
+    
+    useEffect(() => {getGen(1)}, [])
+    useEffect(() => {getAllPokes()}, [])
 
     const postsPerPage = 12;
     const lastPostIndex = currentPage * postsPerPage;
@@ -137,12 +139,12 @@ export const Home = () => {
                         {currentPosts.map((pokemon, key) => (
                             <Grid className="pokeCard animate-pop" item xs={2} key={key}>
                             <PokemonCard 
-                                id={pokemon.data.id} 
-                                name={pokemon.data.name} 
+                                pokemon={pokemon}
+                                handleImage={handleImage}
                                 image={handleImage(pokemon.data.id, pokemon.data.sprites.other["official-artwork"].front_default)}
                                 types={pokemon.data.types} />
                             </Grid>
-                        ))}      
+                        ))}  
                     </Grid>
                 </Container>
                 <Pagination 

@@ -55,6 +55,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+  transition: all 0.4s;
 }
 
 .rock {

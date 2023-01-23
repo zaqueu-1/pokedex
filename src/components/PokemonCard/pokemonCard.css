@@ -1,3 +1,73 @@
+.stats-div {
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    margin-bottom: .5rem;
+}
+
+.stats-div ul {
+    color: #fec20D;
+}
+
+.modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 80vw;
+        height: 60vh;
+        max-width: 900px;
+        transform: translate(-50%, -50%);
+        border-radius: 4px 32px 4px 32px;
+        border: 4px solid rgb(255, 255, 255, 0.2);
+        color: #fff;
+        font-family: Helvetica, 'sans-serif';
+        transition: all 0.7s;
+        margin: 0 auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.7s;
+        background: linear-gradient(to right, rgb(119, 119, 119, 0.6),rgb(49, 129, 114, 0.6));
+}
+
+.info-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.modalTypesContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.ability {
+    padding: .1rem .3rem;
+    margin-top: .5rem;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: rgb(200, 200, 200, 0.3);
+}
+
+.modalType {
+    padding: .1rem .3rem;
+    margin-top: .5rem;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 2px;
+}
+
 .card {
     max-width: 350px;
     border-radius: 16px 16px 0 0; 
@@ -21,12 +91,29 @@
     transition: all 0.4s ease-in-out;
 }
 
-.card-media:hover {
+.modal-media {
+    padding: 150px;
     animation: float 2s infinite;
-    opacity: 1;
 }
 
 @keyframes float {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.card-media:hover {
+    animation: glow 2s infinite;
+    opacity: 1;
+}
+
+@keyframes glow {
 	0% {
 		transform: scale(1);
 	}
@@ -50,6 +137,7 @@
 .type {
     padding: .2rem .5rem;
     margin-top: .5rem;
+    margin-right: .5rem;
     color: white;
     border-radius: 4px;
     text-align: center;
@@ -72,18 +160,62 @@
     text-shadow: 2px 2px rgba(40, 40, 40, 0.3);
 }
 
-@media all and (max-width: 600px) {
+.more-info {
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #fec20D;
+    transition: 0.4s;
+    margin-top: 2px;
+}
+
+.more-info:hover {
+    transform: translateY(-2px);
+
+}
+
+@media all and (max-width: 550px) {
+.info-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.modal {
+    height: 75vh;
+}
 
 .card-media {
     transform: scale(0.8);
 }
 
-.card-media:hover {
-    animation: float 2.5s infinite;
-    opacity: 1;
+.modal-media {
+    padding: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    animation: float 2s infinite;
 }
 
 @keyframes float {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.card-media:hover {
+    animation: glow 2.5s infinite;
+    opacity: 1;
+}
+
+@keyframes glow {
 	0% {
 		transform: scale(0.8);
 	}
@@ -105,6 +237,14 @@
     margin-bottom: 0;
 }
 
+.info-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
 }
 
 @media all and (max-width: 900px) {
@@ -112,13 +252,29 @@
     .card-media {
         transform: scale(0.8);
     }
-    
-    .card-media:hover {
-        animation: float 2.5s infinite;
-        opacity: 1;
+
+    .modal-media {
+        animation: float 2s infinite;
     }
     
     @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    
+    .card-media:hover {
+        animation: glow 2.5s infinite;
+        opacity: 1;
+    }
+    
+    @keyframes glow {
         0% {
             transform: scale(0.8);
         }

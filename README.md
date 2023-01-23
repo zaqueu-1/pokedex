@@ -12,7 +12,10 @@ https://pokedex-zaqueu-1.vercel.app/
 
 ## Roadmap
 - Search system [finished];
-- Responsive port [working on];
+- Mobile view [finished]];
+- AutoScroll and AutoClose for menus (mobile) [finished];
+- Individual pages for each poke [working on];
+- Skeleton Loading [working on];
 
 ## Author
 - [@zaqueu-1](https://www.github.com/zaqueu-1)
