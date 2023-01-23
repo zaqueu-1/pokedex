@@ -1,21 +1,6 @@
 import React from 'react'
 import { AiFillCloseSquare } from 'react-icons/ai'
-
-const BG_STYLE = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    zIndex: '1000',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backdropFilter: 'blur(6px)',
-    transition: 'all 0.5s',
-
-}
+import './modal.css'
 
 const BTN_PLACER = {
     display: 'flex',
@@ -41,7 +26,7 @@ const BTN_STYLE = {
 export default function Modal({isOpen, children, setOpenModal}) {
   if (isOpen) {
     return (
-    <div style={BG_STYLE}>
+    <div className='bg_style'>
         <div className="modal">
             <div style={BTN_PLACER}>
                 <button style={BTN_STYLE} onClick={() => setOpenModal(false)}><AiFillCloseSquare/></button>
