@@ -2,7 +2,7 @@ import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar, { getToolbarUtilityClass } from '@mui/material/Toolbar';
+import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import logo from '../../img/logo.png';
@@ -10,6 +10,9 @@ import Button from '@mui/material/Button';
 import './navbar.css';
 import { useRef } from "react";
 import { FaBars, FaTimes , FaLinkedin, FaInstagramSquare, FaGithubSquare } from "react-icons/fa"
+import { VscGithub } from 'react-icons/vsc'
+import { BsInstagram } from 'react-icons/bs'
+import { AiOutlineLinkedin } from 'react-icons/ai'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -28,6 +31,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  color: 'white',
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -37,6 +41,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
+    color: 'white',
   },
 }));
 
@@ -65,14 +70,14 @@ export default function Navbar({searchPokemons, getGen, gen}) {
   }
 
     return (
-    <Box sx={{ flexGrow: 1, marginBottom:"2em", border:"4px solid transparent" }}>
-      <AppBar position="static" sx={{ backgroundColor:"transparent", boxShadow: "none" }}>
+    <Box sx={{ flexGrow: 1, marginBottom:"2em", border:"none", }}>
+      <AppBar className="appbar" position="static" sx={{ backgroundColor:"rgb(255,255,255,0.05)", borderRadius: '0 0 12px 12px', boxShadow: "none",  }}>
         <Toolbar className="toolbar" >
           <Box className="pokelogo" component="img" src={logo} height="3em"/>
           <div className='socialMedia'>
-            <button onClick={() => takeMeTo('github')} className='socialBtn'><FaGithubSquare></FaGithubSquare></button>
-            <button onClick={() => takeMeTo('insta')} className='socialBtn'><FaInstagramSquare/></button>
-            <button onClick={() => takeMeTo('linkedin')} className='socialBtn'><FaLinkedin></FaLinkedin></button>
+            <button onClick={() => takeMeTo('github')} className='socialBtn'><VscGithub /></button>
+            <button onClick={() => takeMeTo('insta')} className='socialBtn'><BsInstagram/></button>
+            <button onClick={() => takeMeTo('linkedin')} className='socialBtn linkedin'><AiOutlineLinkedin /></button>
           </div>  
           <Box className='nav' ref={navRef} >
                 <Button class={gen === 1 ? "active" : "gen-btn"} onClick={() => showNavbar(1)} >Kanto <small className='small-info'>#1-151</small></Button>
@@ -92,7 +97,8 @@ export default function Navbar({searchPokemons, getGen, gen}) {
 				          <FaBars />
 			          </button>
         </Toolbar>
-        <Search className="search-box" onChange={(e)=>searchPokemons(e.target.value.toLowerCase())}>
+      </AppBar>
+      <Search className="search-box" onChange={(e)=>searchPokemons(e.target.value.toLowerCase())}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -100,7 +106,6 @@ export default function Navbar({searchPokemons, getGen, gen}) {
               placeholder="Buscar…"
               inputProps={{ 'aria-label': 'search' }} />
         </Search>
-      </AppBar>
     </Box>
   );
 }
