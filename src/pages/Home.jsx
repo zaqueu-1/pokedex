@@ -37,7 +37,7 @@ export const Home = () => {
     const getAllPokes = () => {
         var endpoints = [];
        
-        for (var i=1; i<=1008; i++) { 
+        for (var i=1; i<=1010; i++) { 
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`); 
         };
         
@@ -88,7 +88,7 @@ export const Home = () => {
                 break;
             case 9:
                 setGen(gen);
-                getPokemons(906, 1008);
+                getPokemons(906, 1010);
                 setCurrentPage(1);
                 break;
             default:
@@ -116,17 +116,6 @@ export const Home = () => {
         setPokemons(searchRes);
     };
 
-    const handleImage = (id, name) => {
-    const gen1to8 = name;
-    const gen9 = `https://www.serebii.net/pokemon/art/${id}.png`;
-
-        if (id >= 906) {
-            return gen9;
-        } else {
-            return gen1to8;
-    }
-    }
-
     return (
         <div>
             <Navbar 
@@ -140,8 +129,7 @@ export const Home = () => {
                             <Grid className="pokeCard animate-pop" item xs={2} key={key}>
                             <PokemonCard 
                                 pokemon={pokemon}
-                                handleImage={handleImage}
-                                image={handleImage(pokemon.data.id, pokemon.data.sprites.other["official-artwork"].front_default)}
+                                image={pokemon.data.sprites.other["official-artwork"].front_default}
                                 types={pokemon.data.types} />
                             </Grid>
                         ))}  

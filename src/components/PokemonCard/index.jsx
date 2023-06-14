@@ -69,7 +69,7 @@ export default function PokemonCard({ image, types, pokemon, handleImage }) {
   }
 
   return (
-    <Card className="card" style={{ backgroundColor: color}}>
+    <Card className="card-wrapper" style={{ backgroundColor: color}}>
       <Modal setOpenModal={setOpenModal} isOpen={openModal} pokemon={pokemon}>
         <div style={CONTAINER}>
 
@@ -117,6 +117,7 @@ export default function PokemonCard({ image, types, pokemon, handleImage }) {
           </div>
         </div>
       </Modal>
+
       <div className="id-container"> #{pokemon.data.id} </div>
       <CardMedia
         className="card-media"
@@ -134,10 +135,9 @@ export default function PokemonCard({ image, types, pokemon, handleImage }) {
           </Typography>
         </div>
         <CardContent className='cardContent'>
-          <Typography gutterBottom variant="h5" 
-                      className="pokeName" >
+          <Typography className="pokeName" >
             {pokemon.data.name} 
-          <div className="more-info" onClick={() => setOpenModal(true)}>+ Informações</div>
+            <span className="more-info" onClick={() => setOpenModal(true)}>+ Informações</span>
           </Typography>
         </CardContent>
         </Card>
