@@ -8,7 +8,7 @@ A modern and responsive Pokédex web application built with React, featuring all
 
 ## Deploy
 
-[https://pokedex-zaqueu-1.vercel.app/](https://pokedex-gamma-six.vercel.app/)
+https://pokedex-gamma-six.vercel.app/
 
 ## Features
 
