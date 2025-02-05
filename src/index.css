@@ -22,7 +22,9 @@ html {
   align-items: center;
   justify-content: center;
   display: flex;
+  gap: .75rem;
   margin-bottom: 2rem;
+  padding: 0 1rem;
 }
 
 .pokeCard {
@@ -47,7 +49,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: 'Satisfy', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

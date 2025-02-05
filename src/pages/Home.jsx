@@ -16,7 +16,7 @@ export const Home = () => {
   const currentPosts = pokemons.slice(firstPostIndex, lastPostIndex)
 
   return (
-    <div>
+    <>
       <Navbar />
       <Container>
         <Grid className='pokeGrid' container spacing={2}>
@@ -55,6 +55,6 @@ export const Home = () => {
           currentPage={currentPage}
         />
       )}
-    </div>
+    </>
   )
 }
